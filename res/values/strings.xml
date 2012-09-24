@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">Password Generator</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Password Generator</string>
+    <string name="master_password">Enter Master Password</string>
+    <string name="domain_name">Enter Domain Name</string>
+    <string name="generated_password">Generated Password</string>
+    <string name="generate_password">Generate Password</string>
+    <string name="title_activity_mpassword">Password Generator</string>
+    <string name="save_master_password">Save</string>
+    <string name="menu_master_password">Edit Master Password</string>
+
+</resources>

@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/textmasterpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/master_password"
+        android:inputType="textPassword"
+        android:width="250dp" />
+
+    <EditText
+        android:id="@+id/textdomainname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textmasterpassword"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:hint="@string/domain_name"
+        android:inputType="textUri"
+        android:width="300dp" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/buttongeneratepassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textdomainname"
+        android:layout_centerHorizontal="true"
+        android:onClick="generatePassword"
+        android:text="@string/generate_password" />
+
+    <EditText
+        android:id="@+id/textgeneratedpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textmasterpassword"
+        android:layout_below="@+id/buttongeneratepassword"
+        android:ems="10"
+        android:hint="@string/generated_password"
+        android:width="250dp" />
+
+</RelativeLayout>
