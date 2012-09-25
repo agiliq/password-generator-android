@@ -10,7 +10,47 @@
     <string name="title_activity_mpassword">Password Generator</string>
     <string name="save_master_password">Save</string>
     <string name="menu_master_password">Edit Master Password</string>
+    <string name="menu_help">Help</string>
     <string name="admob_id">a1504f267eb56c4</string>
     <string name="copy">Copy</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_help">Help</string>
+    
+    
+    <string name="help_data">
+<b>Summary</b>\n\n
+
+Android App to generate unique password using MD5 checksum for different websites on the client side.\n\n
+
+<b>How to use it?</b>\n\n
+
+1. Set a <b>master password</b>.\n\n
+
+2. Enter a <b>domain name</b>.\n
+(i.e http://www.aqilig.com\n
+www.agiliq.com\n
+agiliq.com)\n\n
+
+<b>Share the URL from browser</b> to generate password.\n\n
+
+3. <b>Generate Password</b>.\n
+App automatically generates a password.\n\n
+
+4. Click on <b>Copy</b> button and <b>paste</b> it in the password field.\n\n
+
+<b>Why?</b>\n\n
+
+- Remember one password use different passwords on various websites.\n
+- Unique Password for every Website.\n
+- Do not want to remember each password.\n
+- Do not store my password on the web servers.\n
+- Algorithmically generate the password.\n\n
+
+<b>How?</b>\n\n
+
+password = MD5(your_master_password +domain)\n
+generated_password = first_8_letters_of(password)\n
+This will generate a per domain password with 8 characters of entropy and it depends only on master password and the domain.\n
+</string>
 
 </resources>

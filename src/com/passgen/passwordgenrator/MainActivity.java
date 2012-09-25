@@ -6,10 +6,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
 import com.flurry.android.FlurryAgent;
 import com.google.ads.AdView;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.ClipData;
@@ -18,6 +16,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -76,7 +75,7 @@ public class MainActivity extends Activity {
         	}
         }
 
-        setIntent(mPassword);
+        setIntent(mPassword, new View(this.getApplicationContext()));
     }
 
     /***
@@ -84,7 +83,7 @@ public class MainActivity extends Activity {
      * 
      * @param mPass
      */
-    public void setIntent(String mPass)
+    public void setIntent(String mPass, View view)
     {
         
         if(mPass == null)
@@ -122,6 +121,9 @@ public class MainActivity extends Activity {
     		case R.id.menumasterpassword:
     			changeMasterPassword();
     			return true;
+    		case R.id.menuhelp:
+    			goToHelp();
+    			return true;
     		default:
     			return super.onOptionsItemSelected(item);
     	
@@ -136,6 +138,16 @@ public class MainActivity extends Activity {
     private void changeMasterPassword() {
     	
     	Intent intent = new Intent(this.getApplicationContext(), MPasswordActivity.class);
+    	startActivity(intent);
+		
+	}
+    
+    /****
+     * Menu method to go to Master Password activity to change Master Password
+     */
+    private void goToHelp() {
+    	
+    	Intent intent = new Intent(this.getApplicationContext(), Help.class);
     	startActivity(intent);
 		
 	}
@@ -165,6 +177,7 @@ public class MainActivity extends Activity {
     		else
     		{
     			gPassword = generateMdPassword(mPassword, dName);
+    			gPassword.trim();
     			generatedPassword.setText(gPassword);
     		}
     		
@@ -203,6 +216,7 @@ public class MainActivity extends Activity {
     				hString.append(Integer.toHexString(0xFF & pDigest[i]));
     			}
     			obtainedPassword = hString.toString();
+    			Log.d("ObPass", obtainedPassword);
     			return obtainedPassword.substring(0, 8);
 			   
     		} catch (NoSuchAlgorithmException e) {
@@ -211,7 +225,6 @@ public class MainActivity extends Activity {
     	}
     	
     	return domainName;
-    	
     	
     }
     
@@ -261,7 +274,7 @@ public class MainActivity extends Activity {
      */
     public void copyPassword(View view)
     {
-    	if(generatedPassword.getText() != null || generatedPassword.getText() != " ")
+    	if(generatedPassword.getText().length() == 8)
     	{
     		ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
     		ClipData clip = ClipData.newPlainText("password",generatedPassword.getText());
