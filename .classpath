@@ -4,5 +4,7 @@
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="lib" path="/home/imran/opt/eclipse/plugins/FlurryAgent.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/imran/opt/android-sdk-linux/extras/google/admob_ads_sdk/GoogleAdMobAdsSdk-6.1.0.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

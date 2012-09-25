@@ -31,6 +31,10 @@ public class MPasswordActivity extends Activity {
         return true;
     }
     
+    /*
+     * 
+     * Method to Save Master Password
+     */
     public void saveMasterPassword(View view){
     	
      mPassword = mastermPassword.getText().toString();
@@ -38,10 +42,8 @@ public class MPasswordActivity extends Activity {
      {
          Editor edit = MainActivity.preference.edit();
          edit.putString("masterpassword", mPassword);
-
          edit.commit();
          edit.apply();
-         String str = MainActivity.preference.getString("masterpassword", null);
          Intent intent = new Intent(view.getContext(), MainActivity.class);
          startActivity(intent);
      }

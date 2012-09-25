@@ -10,5 +10,7 @@
     <string name="title_activity_mpassword">Password Generator</string>
     <string name="save_master_password">Save</string>
     <string name="menu_master_password">Edit Master Password</string>
+    <string name="admob_id">a1504f267eb56c4</string>
+    <string name="copy">Copy</string>
 
 </resources>
