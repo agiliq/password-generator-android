@@ -26,6 +26,8 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	
+	
+
 	TextView masterPassword;
 	TextView domainName;
 	TextView generatedPassword;
@@ -75,7 +77,7 @@ public class MainActivity extends Activity {
         	}
         }
 
-        setIntent(mPassword, new View(this.getApplicationContext()));
+        setIntent(mPassword);
     }
 
     /***
@@ -83,7 +85,7 @@ public class MainActivity extends Activity {
      * 
      * @param mPass
      */
-    public void setIntent(String mPass, View view)
+    public void setIntent(String mPass)
     {
         
         if(mPass == null)
@@ -96,7 +98,6 @@ public class MainActivity extends Activity {
         	   // Look up the AdView as a resource and load a request.
             
         	setContentView(R.layout.activity_main);
-        	adView = (AdView) findViewById(R.id.ad);
             masterPassword = (TextView) findViewById(R.id.textmasterpassword);
             masterPassword.setText(mPassword);
             domainName = (TextView) findViewById(R.id.textdomainname);
@@ -106,6 +107,14 @@ public class MainActivity extends Activity {
 
         }
     }
+    
+    @Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+	}
+
+
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
